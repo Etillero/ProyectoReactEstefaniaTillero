@@ -1,27 +1,24 @@
-
+import './App.js';
 import Navbar from './navbar';
-import'./Styles/estilo.css';
+import'./Styles/App.css';
 import Footer from './footer';
 import Header from './header';
 import Main from './main';
-import 'react-toastify/dist/ReactToastify.css';
-import ItemListContainer from './ItemListContainer';
-import ItemList from './ItemList';
-import Item from './Item';
-
-
+import ItemCar from './components/Itemcar.js';
+import Contador from './components/contador.js';
+import Contacto from './contacto.js';
 
 function App() {
     return(
 
-        <>
+       <> 
         <Navbar/>
         <Header/>
         <Main nombre='Estefania' apellido='Tillero'/>
         <Footer/>
-        <ItemListContainer/>
-        <ItemList/>
-        <Item/>
+        <ItemCar/>
+        <Contador/>
+        <Contacto/>
         </>
     );
     

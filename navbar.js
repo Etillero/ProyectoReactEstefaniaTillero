@@ -1,27 +1,53 @@
-import React from "react";
+import React from "react"; 'react'
+
+import {BrowserRouter as Router, Routes, Route,Link
+} from "react-router-dom";
+
+import ItemCar from './components/Itemcar'
 
 
-export default function Navbar() {
 
-    return(
-        <>
-        <nav>
-    <div class="w5-top">
-                <div class="w2-bar w2-black w2-card" id="myNavbar">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                        </a></div>
-                    <div class="w3-right w4-hide-small">
-                        <a href="#" class="w3-bar-item w3-button">Inicio</a>
-                        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> Servicios</a>
-                        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contactos</a>
-                    </div>
-                    </div>
-                    </div>
+function Contacto(){
+  return <h2>Contacto</h2>
+}
+export default function Navbar () {
+  return(
+    <Router>
+    <div className="uk-position-relative">
+    <nav className="uk-navbar-container" uk-navbar="dropbar: true">
 
-                </nav>
-                </>
+        <div className="uk-navbar-left">
 
-    )
+            <ul className="uk-navbar-nav">
+                <li>
+                    <Link to="/">Inicio</Link>
+                </li>
+                <li>
+                    <Link to="/Contacto">Contacto</Link>
+                </li>
+            </ul>
 
-                                 }
+        </div>
+
+        <div className="uk-navbar-right">
+
+            <ul className="uk-navbar-nav">
+                <li>
+                    <span uk-icon="cart"></span>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div className="uk-navbar-dropbar"></div>
+    <Routes>
+      <Route path="/Contacto" element={<Contacto/>} />
+      <Route path="/item" element={<ItemCar/>}/>
+    </Routes>
+  </div>
+</Router>
+  )
+
+}
+
